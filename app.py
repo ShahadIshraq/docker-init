@@ -8,6 +8,12 @@ redis = Redis(host="redis", db=0, socket_connect_timeout=2, socket_timeout=2)
 
 app = Flask(__name__)
 
+@app.route('/tanvir/<int:number>/<int:number1>')
+def default(number,number1):
+	result = number//number1
+	return 'Hello Tanvir: %d' % result
+
+
 @app.route("/")
 def hello():
     try:
